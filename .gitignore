@@ -1,0 +1,18 @@
+# _***_ directories contain generated artifacts
+/_bin_
+/_obj_
+/_dep_
+/_xmb_b_
+/_xmb_o_
+# In the assets directory, only sources and images are relevant
+/assets/*
+!/assets/*.png
+!/assets/*.xcf
+!/assets/*.c
+!/assets/*.h
+# If there are emulator binaries copied here, ignore them
+cuzebox
+cuzebox.*
+uzem
+uzem.*
+eeprom.bin
