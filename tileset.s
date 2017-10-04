@@ -1,6 +1,6 @@
 
 ;
-; Mode 90 tileset of 96 tiles at 8 pixels height
+; Mode 90 tileset of 256 tiles at 8 pixels height
 ;
 
 
@@ -17,8 +17,8 @@
 
 
 m90_defpalette:
-	.byte 0x00, 0x2F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x03, 0x05, 0x07
+	.byte 0x00, 0x09, 0x0D, 0x52, 0x0F, 0x5B, 0x23, 0xA4
+	.byte 0x32, 0xAD, 0x2F, 0xF6, 0x3E, 0xFF, 0xFF, 0xFF
 
 
 
@@ -48,7 +48,7 @@ common_row_0:
 	breq  common_row_0_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -70,7 +70,7 @@ row_0_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -78,48 +78,13 @@ row_0_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_0
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -131,14 +96,42 @@ row_0_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
 	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -175,74 +168,1208 @@ row_0_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r14
+	out   PIXOUT,  r15
+	mov   r1,      r14
+	mov   r22,     r14
+	mov   r23,     r10
+	out   PIXOUT,  r14
+	rjmp  common_row_0
+	mov   r0,      r14
+	out   PIXOUT,  r15
+	mov   r1,      r14
+	mov   r22,     r14
+	mov   r23,     r12
+	out   PIXOUT,  r14
+	rjmp  common_row_0
+	mov   r0,      r12
+	out   PIXOUT,  r15
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r6
+	out   PIXOUT,  r12
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r13
+	mov   r23,     r11
+	out   PIXOUT,  r13
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
 	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r3
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r22,     r13
+	mov   r23,     r15
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r3
-	out   PIXOUT,  r3
-	mov   r1,      r3
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r5
 	mov   r22,     r3
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r15
 	rjmp  common_row_0
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
 	mov   r0,      r3
-	out   PIXOUT,  r3
-	mov   r1,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r7
 	mov   r22,     r3
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_0
 	mov   r0,      r3
 	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r15
 	mov   r1,      r3
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
 	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r13
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r13
+	mov   r1,      r13
+	mov   r22,     r13
+	mov   r23,     r11
+	out   PIXOUT,  r13
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r7
+	mov   r1,      r13
+	mov   r22,     r13
+	mov   r23,     r13
+	out   PIXOUT,  r11
+	rjmp  common_row_0
+	mov   r0,      r5
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
 	rjmp  common_row_0
 	mov   r0,      r3
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r13
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
 	out   PIXOUT,  r3
 	rjmp  common_row_0
 	mov   r0,      r2
@@ -255,352 +1382,58 @@ row_0_code:
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r22,     r3
+	mov   r23,     r15
 	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r7
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
+	mov   r22,     r3
+	mov   r23,     r7
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r2
+	mov   r0,      r13
+	out   PIXOUT,  r13
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r15
 	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r9
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r3
+	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
+	mov   r0,      r11
+	out   PIXOUT,  r7
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -619,9 +1452,226 @@ row_0_code:
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r3
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r5
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r3
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_0
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r9
+	out   PIXOUT,  r3
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r3
+	out   PIXOUT,  r9
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -640,9 +1690,30 @@ row_0_code:
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r5
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_0
+	mov   r0,      r2
 	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r11
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -655,11 +1726,74 @@ row_0_code:
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
-	mov   r23,     r2
+	mov   r23,     r15
 	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r5
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r13
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
@@ -672,33 +1806,19 @@ row_0_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
+	mov   r0,      r3
+	out   PIXOUT,  r13
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_0
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r15
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -709,31 +1829,31 @@ row_0_code:
 	rjmp  common_row_0
 	mov   r0,      r2
 	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_0
+	mov   r0,      r9
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_0
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
 	out   PIXOUT,  r2
 	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
-	rjmp  common_row_0
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
 	rjmp  common_row_0
 
 
@@ -752,7 +1872,7 @@ common_row_1:
 	breq  common_row_1_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -774,77 +1894,63 @@ row_1_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_1
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_1
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r2
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_1
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r2
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_1
-	mov   r0,      r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -852,6 +1958,13 @@ row_1_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_1
 	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -875,499 +1988,730 @@ row_1_code:
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r4
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_1
 	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_1
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_1
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r9
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r5
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
 	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	rjmp  common_row_1
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_1
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r3
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_1
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r9
 	rjmp  common_row_1
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -1406,7 +2750,70 @@ row_1_code:
 	rjmp  common_row_1
 	mov   r0,      r3
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
@@ -1414,30 +2821,863 @@ row_1_code:
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r13
 	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r3
+	mov   r22,     r5
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r9
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_1
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r3
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r3
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r7
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r3
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r9
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r7
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_1
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_1
+	mov   r0,      r11
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_1
 
 
@@ -1456,7 +3696,7 @@ common_row_2:
 	breq  common_row_2_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -1478,29 +3718,29 @@ row_2_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_2
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_2
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
+	out   PIXOUT,  r15
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_2
 	mov   r0,      r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
@@ -1508,48 +3748,13 @@ row_2_code:
 	rjmp  common_row_2
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
+	mov   r0,      r15
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
@@ -1560,9 +3765,30 @@ row_2_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_2
 	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -1578,570 +3804,1704 @@ row_2_code:
 	rjmp  common_row_2
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_2
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_2
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_2
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r9
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r3
 	rjmp  common_row_2
 	mov   r0,      r2
 	out   PIXOUT,  r3
-	mov   r1,      r3
-	mov   r22,     r3
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r9
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r9
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r13
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r9
+	mov   r23,     r13
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r9
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r11
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r5
+	mov   r23,     r5
+	out   PIXOUT,  r13
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r5
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r7
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r5
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r9
+	mov   r23,     r13
+	out   PIXOUT,  r7
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r5
+	mov   r23,     r7
+	out   PIXOUT,  r13
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_2
 	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r9
+	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r3
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r11
 	rjmp  common_row_2
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
-	mov   r23,     r2
+	mov   r23,     r3
 	out   PIXOUT,  r2
 	rjmp  common_row_2
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r23,     r9
+	out   PIXOUT,  r11
 	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r3
+	mov   r0,      r9
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r23,     r11
+	out   PIXOUT,  r15
 	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r5
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_2
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r1,      r5
+	mov   r22,     r13
+	mov   r23,     r15
 	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r4
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_2
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r3
 	rjmp  common_row_2
 	mov   r0,      r3
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r9
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
 	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r9
 	rjmp  common_row_2
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_2
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
 	rjmp  common_row_2
 
 
@@ -2160,7 +5520,7 @@ common_row_3:
 	breq  common_row_3_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -2182,7 +5542,7 @@ row_3_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -2198,33 +5558,19 @@ row_3_code:
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_3
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -2236,28 +5582,7 @@ row_3_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -2266,12 +5591,33 @@ row_3_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -2280,21 +5626,742 @@ row_3_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r3
-	out   PIXOUT,  r3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_3
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_3
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r3
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -2303,80 +6370,269 @@ row_3_code:
 	rjmp  common_row_3
 	mov   r0,      r3
 	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_3
 	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r3
-	out   PIXOUT,  r3
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_3
-	mov   r0,      r3
-	out   PIXOUT,  r3
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_3
-	mov   r0,      r3
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_3
-	mov   r0,      r3
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r7
 	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
+	mov   r23,     r15
+	out   PIXOUT,  r15
 	rjmp  common_row_3
 	mov   r0,      r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -2385,229 +6641,26 @@ row_3_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r11
 	rjmp  common_row_3
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r5
 	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r11
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r4
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -2625,227 +6678,654 @@ row_3_code:
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r5
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r2
+	mov   r0,      r11
 	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_3
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_3
 	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r7
+	out   PIXOUT,  r5
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r7
+	mov   r23,     r3
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r5
+	rjmp  common_row_3
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
 	out   PIXOUT,  r3
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r9
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r7
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_3
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r3
-	mov   r22,     r3
+	mov   r22,     r11
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r13
 	out   PIXOUT,  r3
 	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_3
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r7
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r7
+	mov   r22,     r5
+	mov   r23,     r13
+	out   PIXOUT,  r7
+	rjmp  common_row_3
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r7
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r5
+	out   PIXOUT,  r11
+	rjmp  common_row_3
+	mov   r0,      r13
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r5
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_3
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_3
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_3
 
 
@@ -2864,7 +7344,7 @@ common_row_4:
 	breq  common_row_4_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -2886,7 +7366,7 @@ row_4_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_4
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -2902,35 +7382,14 @@ row_4_code:
 	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
@@ -2940,26 +7399,12 @@ row_4_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
+	mov   r0,      r15
+	out   PIXOUT,  r15
 	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
+	mov   r22,     r15
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_4
@@ -2971,6 +7416,27 @@ row_4_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_4
 	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -2989,54 +7455,1377 @@ row_4_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r2
 	rjmp  common_row_4
 	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_4
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_4
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r9
+	mov   r1,      r13
+	mov   r22,     r13
+	mov   r23,     r13
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r7
+	mov   r23,     r3
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r13
 	out   PIXOUT,  r3
+	rjmp  common_row_4
+	mov   r0,      r13
+	out   PIXOUT,  r13
+	mov   r1,      r13
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_4
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r3
-	out   PIXOUT,  r3
+	mov   r0,      r13
+	out   PIXOUT,  r15
 	mov   r1,      r3
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r7
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r7
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r9
+	mov   r23,     r7
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r9
 	out   PIXOUT,  r3
 	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r11
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r7
 	mov   r22,     r3
 	mov   r23,     r2
 	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r7
+	mov   r1,      r9
+	mov   r22,     r9
+	mov   r23,     r9
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r9
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r9
+	mov   r1,      r9
+	mov   r22,     r9
+	mov   r23,     r9
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r5
+	out   PIXOUT,  r11
 	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r3
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_4
@@ -3045,21 +8834,287 @@ row_4_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r13
 	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r5
 	rjmp  common_row_4
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r15
 	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r11
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_4
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r9
 	mov   r22,     r3
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_4
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
 	out   PIXOUT,  r2
 	rjmp  common_row_4
 	mov   r0,      r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r5
 	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -3075,12 +9130,19 @@ row_4_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_4
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r5
+	rjmp  common_row_4
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r15
 	rjmp  common_row_4
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -3088,468 +9150,6 @@ row_4_code:
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r4
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_4
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
-	rjmp  common_row_4
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
 	rjmp  common_row_4
 
 
@@ -3568,7 +9168,7 @@ common_row_5:
 	breq  common_row_5_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -3604,37 +9204,30 @@ row_5_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
@@ -3644,9 +9237,16 @@ row_5_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -3655,24 +9255,24 @@ row_5_code:
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_5
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -3681,66 +9281,1158 @@ row_5_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r12
+	mov   r1,      r2
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_5
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_5
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
 	out   PIXOUT,  r3
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r3
 	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r3
+	mov   r23,     r11
+	out   PIXOUT,  r5
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r11
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r3
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r3
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r15
 	mov   r1,      r2
 	mov   r22,     r3
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r13
+	out   PIXOUT,  r7
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r5
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
@@ -3749,56 +10441,56 @@ row_5_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r3
-	mov   r1,      r2
-	mov   r22,     r3
-	mov   r23,     r2
 	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r3
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r22,     r5
+	mov   r23,     r11
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -3808,190 +10500,127 @@ row_5_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
+	mov   r22,     r13
+	mov   r23,     r15
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r11
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r13
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r22,     r3
+	mov   r23,     r15
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
+	out   PIXOUT,  r13
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r5
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r7
 	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r3
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
+	mov   r0,      r13
+	out   PIXOUT,  r11
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r5
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
@@ -4001,20 +10630,20 @@ row_5_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
+	mov   r22,     r5
+	mov   r23,     r15
 	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
@@ -4039,182 +10668,35 @@ row_5_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_5
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r11
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r9
 	rjmp  common_row_5
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_5
-	mov   r0,      r2
-	out   PIXOUT,  r4
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
@@ -4234,26 +10716,264 @@ row_5_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r9
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r5
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_5
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r5
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_5
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_5
+	mov   r0,      r5
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_5
+	mov   r0,      r11
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_5
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_5
 
 
@@ -4272,7 +10992,7 @@ common_row_6:
 	breq  common_row_6_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -4294,7 +11014,7 @@ row_6_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -4310,12 +11030,12 @@ row_6_code:
 	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r4
+	mov   r1,      r15
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_6
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -4323,18 +11043,18 @@ row_6_code:
 	out   PIXOUT,  r2
 	rjmp  common_row_6
 	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
-	mov   r22,     r4
+	mov   r22,     r15
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -4343,21 +11063,7 @@ row_6_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
+	mov   r0,      r15
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
@@ -4369,14 +11075,7 @@ row_6_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -4385,344 +11084,1394 @@ row_6_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
+	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
 	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r12
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r2
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r2
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r10
+	out   PIXOUT,  r14
+	mov   r1,      r10
+	mov   r22,     r10
+	mov   r23,     r8
+	out   PIXOUT,  r10
+	rjmp  common_row_6
+	mov   r0,      r12
+	out   PIXOUT,  r14
+	mov   r1,      r12
+	mov   r22,     r12
+	mov   r23,     r4
+	out   PIXOUT,  r12
+	rjmp  common_row_6
+	mov   r0,      r6
+	out   PIXOUT,  r12
+	mov   r1,      r6
+	mov   r22,     r6
+	mov   r23,     r4
+	out   PIXOUT,  r6
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r5
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r3
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r7
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
 	out   PIXOUT,  r2
 	rjmp  common_row_6
 	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r15
 	rjmp  common_row_6
-	mov   r0,      r3
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r3
-	mov   r1,      r3
+	mov   r1,      r13
 	mov   r22,     r3
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_6
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r13
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
 	mov   r0,      r3
 	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r5
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r5
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_6
+	mov   r0,      r3
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r3
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r11
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r11
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r5
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r7
+	rjmp  common_row_6
+	mov   r0,      r11
+	out   PIXOUT,  r11
+	mov   r1,      r11
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r13
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r3
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
 	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r3
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
+	mov   r22,     r15
+	mov   r23,     r11
 	out   PIXOUT,  r2
 	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
 	out   PIXOUT,  r2
 	rjmp  common_row_6
 	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r9
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
@@ -4742,222 +12491,313 @@ row_6_code:
 	mov   r23,     r2
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
 	mov   r0,      r2
 	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r5
 	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
+	mov   r0,      r15
 	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_6
-	mov   r0,      r3
-	out   PIXOUT,  r2
-	mov   r1,      r3
+	mov   r1,      r15
 	mov   r22,     r3
 	mov   r23,     r2
-	out   PIXOUT,  r3
+	out   PIXOUT,  r11
 	rjmp  common_row_6
 	mov   r0,      r3
 	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
 	mov   r1,      r3
-	mov   r22,     r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r13
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r13
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r5
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r3
 	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
 	rjmp  common_row_6
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r9
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r13
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r13
+	rjmp  common_row_6
+	mov   r0,      r9
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r9
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_6
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r11
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r9
+	rjmp  common_row_6
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
 	rjmp  common_row_6
 
 
@@ -4976,7 +12816,7 @@ common_row_7:
 	breq  common_row_7_e   ; (10 / 11)
 	ld    ZL,      X+      ; (12)
 	out   PIXOUT,  r1      ; (13)
-	andi  ZL,      0x7F    ; (14)
+	andi  ZL,      0xFF    ; (14)
 	mul   ZL,      r19     ; (16)
 	out   PIXOUT,  r22     ; (17)
 	movw  ZL,      r0      ; (18)
@@ -5080,7 +12920,7 @@ row_7_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
+	out   PIXOUT,  r15
 	rjmp  common_row_7
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -5185,112 +13025,7 @@ row_7_code:
 	mov   r1,      r2
 	mov   r22,     r2
 	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
+	out   PIXOUT,  r15
 	rjmp  common_row_7
 	mov   r0,      r2
 	out   PIXOUT,  r2
@@ -5431,237 +13166,1462 @@ row_7_code:
 	mov   r22,     r2
 	mov   r23,     r2
 	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r15
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r8
+	out   PIXOUT,  r10
+	mov   r1,      r8
+	mov   r22,     r8
+	mov   r23,     r5
+	out   PIXOUT,  r8
 	rjmp  common_row_7
 	mov   r0,      r4
-	out   PIXOUT,  r4
+	out   PIXOUT,  r12
 	mov   r1,      r4
 	mov   r22,     r4
-	mov   r23,     r4
+	mov   r23,     r5
 	out   PIXOUT,  r4
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
 	rjmp  common_row_7
 	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r4
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r4
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r4
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r4
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r4
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r2
-	out   PIXOUT,  r2
-	mov   r1,      r2
-	mov   r22,     r2
-	mov   r23,     r2
-	out   PIXOUT,  r2
-	rjmp  common_row_7
-	mov   r0,      r4
-	out   PIXOUT,  r4
+	out   PIXOUT,  r6
 	mov   r1,      r4
 	mov   r22,     r4
-	mov   r23,     r4
+	mov   r23,     r5
 	out   PIXOUT,  r4
 	rjmp  common_row_7
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r7
+	out   PIXOUT,  r11
+	mov   r1,      r7
+	mov   r22,     r7
+	mov   r23,     r5
+	out   PIXOUT,  r7
 	rjmp  common_row_7
-	mov   r0,      r4
-	out   PIXOUT,  r4
-	mov   r1,      r4
-	mov   r22,     r4
-	mov   r23,     r4
-	out   PIXOUT,  r4
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r13
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r5
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r5
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r7
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r13
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r7
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r5
+	out   PIXOUT,  r5
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r5
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r3
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r5
+	out   PIXOUT,  r5
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r7
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r13
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r13
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r13
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r9
+	mov   r1,      r13
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r7
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r5
+	mov   r1,      r11
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r3
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r9
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r9
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r3
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r11
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r5
+	mov   r1,      r3
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r15
+	mov   r1,      r13
+	mov   r22,     r11
+	mov   r23,     r11
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r9
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r5
+	mov   r23,     r9
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r3
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r3
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r11
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r13
+	out   PIXOUT,  r15
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r13
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r3
+	mov   r22,     r13
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r5
+	out   PIXOUT,  r15
+	mov   r1,      r7
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r11
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r7
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r11
+	mov   r1,      r9
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r3
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r9
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r9
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r3
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r9
+	mov   r22,     r15
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r11
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r15
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r15
+	out   PIXOUT,  r2
+	mov   r1,      r15
+	mov   r22,     r11
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r7
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r11
+	mov   r23,     r15
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r9
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r9
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r11
+	out   PIXOUT,  r15
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r15
+	rjmp  common_row_7
+	mov   r0,      r7
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r2
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
+	rjmp  common_row_7
+	mov   r0,      r2
+	out   PIXOUT,  r7
+	mov   r1,      r2
+	mov   r22,     r2
+	mov   r23,     r2
+	out   PIXOUT,  r2
 	rjmp  common_row_7
 
 

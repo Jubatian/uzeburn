@@ -54,7 +54,7 @@ xmb_fault:
 ;
 .global xmbu_error_clear
 xmbu_error_clear:
-	lds   r24,     0x00
+	ldi   r24,     0x00
 	sts   xmbu_error_report + 0, r24
 	ret
 
@@ -66,6 +66,7 @@ xmbu_error_clear:
 .global xmbu_iserror
 xmbu_iserror:
 	lds   r24,     xmbu_error_report + 0
+	sts   0x003A,  r24
 	cpi   r24,     0x00
 	breq  .+2
 	ldi   r24,     0x01
