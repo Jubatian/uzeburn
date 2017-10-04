@@ -56,6 +56,15 @@ static const u8 xmb_logo_data[18U * 12U] PROGMEM = {
 };
 
 
+/* Text descriptions */
+static const u8 text_data[] PROGMEM =
+ "      XMBurner for UzeBox\n"
+ "  by: Sandor Zsuga (Jubatian)\n"
+ "\n"
+ "Uzebox & comps. license : GPLv3\n"
+ "XMBurner lib. license ..: MPLv2\n";
+
+
 /* XMBurner component list printout for the VRAM */
 static const u8 xmb_comp_list[4U * 20U] PROGMEM = {
  'c' - 0x20U, 'r' - 0x20U, 'e' - 0x20U, 'g' - 0x20U,
@@ -117,6 +126,28 @@ static void draw_logo(u8 x, u8 y)
        pgm_read_byte(&xmb_logo_data[j * 18U + i]);
   }
  }
+}
+
+
+
+/* Outputs text data */
+static void draw_text(u8 x, u8 y)
+{
+ u8 const* sptr = &text_data[0];
+ u8 chr;
+ u8 xpos = x;
+ do{
+  chr = pgm_read_byte(sptr);
+  if (chr >= 0x20U){
+   vram[(u16)(y) * VRAM_TILES_H + xpos] = chr - 0x20U;
+  }
+  sptr ++;
+  xpos ++;
+  if (chr == '\n'){
+   xpos = x;
+   y ++;
+  }
+ }while (chr != 0U);
 }
 
 
@@ -225,7 +256,8 @@ static void init(void)
  /* Initially prepare or rebuild display */
 
  draw_frame();
- draw_logo(39U, 2U);
+ draw_logo(32U, 3U);
+ draw_text(25U, 17U);
  draw_comp();
  draw_comp_clear();
 
