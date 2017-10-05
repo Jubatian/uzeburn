@@ -32,11 +32,7 @@
 
 /* XMBurner component list origin on the VRAM */
 #define CLIST_X    3U
-#define CLIST_Y    2U
-
-/* Maximum error indicator value. Later a better solution will likely be added
-** for this, for now simply assume 10 which is fine with current XMBurner. */
-#define ERRIND_MAX 10U
+#define CLIST_Y    6U
 
 
 /* XMBurner logo image for the VRAM, 18 x 12 */
@@ -65,6 +61,14 @@ static const u8 text_data[] PROGMEM =
  "XMBurner lib. license ..: MPLv2\n";
 
 
+/* Box legend */
+static const u8 text_legend[] PROGMEM =
+ "+----> Unknown fault code\n"
+ ":+---> Execution chain fault\n"
+ ":: +-> Detected fault\n"
+ ":: :\n";
+
+
 /* XMBurner component list printout for the VRAM */
 static const u8 xmb_comp_list[4U * 20U] PROGMEM = {
  'c' - 0x20U, 'r' - 0x20U, 'e' - 0x20U, 'g' - 0x20U,
@@ -89,6 +93,30 @@ static const u8 xmb_comp_list[4U * 20U] PROGMEM = {
  ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U,
 };
 
+
+/* XMBurner component fault code counts */
+static const u8 xmb_comp_fidcnt[20U] PROGMEM = {
+ XMB_FID_CNT_CREG,
+ XMB_FID_CNT_COND,
+ XMB_FID_CNT_JUMP,
+ XMB_FID_CNT_CRC,
+ XMB_FID_CNT_RAM,
+ XMB_FID_CNT_LOG,
+ XMB_FID_CNT_SUB,
+ XMB_FID_CNT_ADD,
+ XMB_FID_CNT_ALEX,
+ XMB_FID_CNT_WOPS,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0
+};
 
 
 /* Draw display frame for positioning */
@@ -130,10 +158,9 @@ static void draw_logo(u8 x, u8 y)
 
 
 
-/* Outputs text data */
-static void draw_text(u8 x, u8 y)
+/* Generic text output by pointer */
+static void draw_generic_text(u8 const* sptr, u8 x, u8 y)
 {
- u8 const* sptr = &text_data[0];
  u8 chr;
  u8 xpos = x;
  do{
@@ -152,12 +179,21 @@ static void draw_text(u8 x, u8 y)
 
 
 
+/* Outputs text data */
+static void draw_text(u8 x, u8 y)
+{
+ draw_generic_text(&text_data[0], x, y);
+}
+
+
+
 /* Output the component list in VRAM */
 static void draw_comp(void)
 {
  u8 i;
  u8 j;
- for (j = 0U; j < 20U; j++){
+ draw_generic_text(&text_legend[0], CLIST_X + 7U, CLIST_Y - 4U);
+ for (j = 0U; j < XMB_COMPONENT_COUNT; j++){
   for (i = 0U; i < 4U; i++){
    vram[(u16)(j + CLIST_Y) * VRAM_TILES_H + (i + CLIST_X + 2U)] =
        pgm_read_byte(&xmb_comp_list[j * 4U + i]);
@@ -170,12 +206,15 @@ static void draw_comp(void)
 /* Output an indicator box at a given XMBurner component position */
 static void draw_comp_box(u8 comp, u8 pos, u8 coldef)
 {
- if (comp >= 20U){ return; }
+ if (comp >= XMB_COMPONENT_COUNT){ return; }
  if (pos == 0xFFU){ /* Chain column */
-  vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (7U + CLIST_X)] = coldef;
+  vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (8U + CLIST_X)] = coldef;
  }else{             /* Normal indicators */
-  if (pos >= ERRIND_MAX){ return; }
-  vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (9U + pos + CLIST_X)] = coldef;
+  if (pos >= pgm_read_byte(&(xmb_comp_fidcnt[comp]))){
+   vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (7U + CLIST_X)] = coldef;
+  }else{
+   vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (10U + pos + CLIST_X)] = coldef;
+  }
  }
 }
 
@@ -185,12 +224,14 @@ static void draw_comp_box(u8 comp, u8 pos, u8 coldef)
 static u8 get_comp_box(u8 comp, u8 pos)
 {
  u8 ret = BOX_GRAY;
- if (comp < 20U){
+ if (comp < XMB_COMPONENT_COUNT){
   if (pos == 0xFFU){ /* Chain column */
-   ret = vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (7U + CLIST_X)];
+   ret = vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (8U + CLIST_X)];
   }else{             /* Normal indicators */
-   if (pos < ERRIND_MAX){
-    ret = vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (9U + pos + CLIST_X)];
+   if (pos >= pgm_read_byte(&(xmb_comp_fidcnt[comp]))){
+    ret = vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (7U + CLIST_X)];
+   }else{
+    ret = vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + (10U + pos + CLIST_X)];
    }
   }
  }
@@ -206,8 +247,8 @@ static u8 get_comp_box(u8 comp, u8 pos)
 static void draw_comp_ind(u8 comp)
 {
  u8 i;
- if (comp >= 20U){ return; }
- for (i = 0U; i < 20U; i++){
+ if (comp >= XMB_COMPONENT_COUNT){ return; }
+ for (i = 0U; i < XMB_COMPONENT_COUNT; i++){
   vram[(u16)(i + CLIST_Y) * VRAM_TILES_H + CLIST_X] = ' ' - 0x20U;
  }
  vram[(u16)(comp + CLIST_Y) * VRAM_TILES_H + CLIST_X] = '+' - 0x20U;
@@ -222,8 +263,8 @@ static void draw_comp_clear(void)
  u8 i;
  u8 j;
  u8 col;
- for (j = 0U; j < 20U; j++){
-  for (i = 0xFFU; i != ERRIND_MAX; i++){
+ for (j = 0U; j < XMB_COMPONENT_COUNT; j++){
+  for (i = 0xFFU; i != (pgm_read_byte(&(xmb_comp_fidcnt[j])) + 1U); i++){
    col = get_comp_box(j, i);
    if (col == BOX_GREEN){ col = BOX_GRAY; }
    draw_comp_box(j, i, col);
@@ -239,8 +280,8 @@ static void draw_comp_passed(u8 comp)
 {
  u8 i;
  u8 col;
- if (comp >= 20U){ return; }
- for (i = 0xFFU; i != ERRIND_MAX; i++){
+ if (comp >= XMB_COMPONENT_COUNT){ return; }
+ for (i = 0xFFU; i != (pgm_read_byte(&(xmb_comp_fidcnt[comp])) + 1U); i++){
   col = get_comp_box(comp, i);
   if (col == BOX_GRAY){ col = BOX_GREEN; }
   if (col == BOX_RED){  col = BOX_YELLOW; }
@@ -256,8 +297,8 @@ static void init(void)
  /* Initially prepare or rebuild display */
 
  draw_frame();
- draw_logo(32U, 3U);
- draw_text(25U, 17U);
+ draw_logo(32U,  6U);
+ draw_text(25U, 20U);
  draw_comp();
  draw_comp_clear();
 
