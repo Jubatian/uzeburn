@@ -61,12 +61,12 @@ static const u8 text_data[] PROGMEM =
  "XMBurner lib. license ..: MPLv2\n";
 
 
-/* Box legend */
+/* Box legend (0x84 is the down->left corner, 0x85 the arrow head) */
 static const u8 text_legend[] PROGMEM =
- "+----> Unknown fault code\n"
- ":+---> Execution chain fault\n"
- ":: +-> Detected fault\n"
- ":: :\n";
+ "\x84----\x85 Unknown fault code\n"
+ "|\x84---\x85 Execution chain fault\n"
+ "|| \x84-\x85 Detected fault\n"
+ "|| |\n";
 
 
 /* XMBurner component list printout for the VRAM */
@@ -134,11 +134,11 @@ static void draw_frame(void)
  j = 1U;
  for (i = 1U; i < 28U; i++){
   vram[(u16)(i) * VRAM_TILES_H +  0U] = j + '0' - 0x20U;
-  vram[(u16)(i) * VRAM_TILES_H + 59U] = ':' - 0x20U;
+  vram[(u16)(i) * VRAM_TILES_H + 59U] = '|' - 0x20U;
   j = j + 1U;
   if (j >= 10U){ j = 0U; }
  }
- vram[(u16)(27U) * VRAM_TILES_H + 59U] = '+' - 0x20U;
+ vram[(u16)(27U) * VRAM_TILES_H + 59U] = 0x86U - 0x20U; /* Bottom left corner */
 }
 
 
