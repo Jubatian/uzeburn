@@ -79,20 +79,23 @@ ASMFLAGS += -x assembler-with-cpp -Wa,-gdwarf2
 LDFLAGS  = $(COMMON)
 LDFLAGS += -Wl,-Map=$(OUTDIR)/$(GAME).map
 LDFLAGS += -Wl,-gc-sections
+LDFLAGS += -Wl,--section-start=.high=0x7F80
 
 ## Intel Hex file production flags
-HEX_FLASH_FLAGS = -R .eeprom
+HEX_FLASH_FLAGS  = -R .eeprom
+HEX_FLASH_FLAGS += --set-section-flags .high=alloc,load,code
 
 
 ## XMBurner definitions
-XMB_CC    = $(CC)
-XMB_MCU   = $(MCU)
-XMB_NATCC = gcc
-XMB_SPATH = $(XMBURNER_DIR)
-XMB_OPATH = .
+XMB_CC      = $(CC)
+XMB_MCU     = $(MCU)
+XMB_NATCC   = gcc
+XMB_SPATH   = $(XMBURNER_DIR)
+XMB_OPATH   = .
 include $(XMBURNER_DIR)/xmb_defs.mk
-DIRS     += $(XMB_OBJ)
-DIRS     += $(XMB_BIN)
+XMB_CFLAGS += -DXMB_COMP_SECTION=.high
+DIRS       += $(XMB_OBJ)
+DIRS       += $(XMB_BIN)
 
 
 ## Objects that must be built in order to link
@@ -152,8 +155,8 @@ $(OBJDIR)/tileset.o: tileset.s $(DIRS)
 	$(CC) $(INCLUDES) $(ASMFLAGS) -c $< -o $@
 
 ##Link
-$(OUTDIR)/$(TARGET): $(OBJECTS) $(DIRS) $(XMB_OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) $(XMB_OBJECTS) $(LIBDIRS) $(LIBS) -o $(OUTDIR)/$(TARGET)
+$(OUTDIR)/$(TARGET): $(XMB_OBJECTS) $(OBJECTS) $(DIRS)
+	$(CC) $(LDFLAGS) $(XMB_OBJECTS) $(OBJECTS) $(LIBDIRS) $(LIBS) -o $(OUTDIR)/$(TARGET)
 
 $(OUTDIR)/%.hex: $(OUTDIR)/%.hexraw $(XMB_CRCHEX_BIN)
 	$(XMB_CRCHEX_BIN) $< $(BINSIZE) > $@

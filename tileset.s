@@ -7329,6 +7329,8 @@ row_3_code:
 	rjmp  common_row_3
 
 
+.section .high
+
 
 common_row_4_s:
 	ldi   r18,     61      ; ( 4) For 60 tiles

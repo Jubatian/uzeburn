@@ -10,6 +10,7 @@
 !/assets/*.xcf
 !/assets/*.c
 !/assets/*.h
+!/assets/*.rst
 # If there are emulator binaries copied here, ignore them
 cuzebox
 cuzebox.*
