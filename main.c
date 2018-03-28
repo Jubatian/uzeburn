@@ -1,6 +1,6 @@
 /*
  *  XMBurner for Uzebox
- *  Copyright (C) 2017 Sandor Zsuga (Jubatian)
+ *  Copyright (C) 2018 Sandor Zsuga (Jubatian)
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -82,7 +82,7 @@ static const u8 xmb_comp_list[4U * 20U] PROGMEM = {
  'a' - 0x20U, 'l' - 0x20U, 'e' - 0x20U, 'x' - 0x20U,
  'w' - 0x20U, 'o' - 0x20U, 'p' - 0x20U, 's' - 0x20U,
  ' ' - 0x20U, 'b' - 0x20U, 'i' - 0x20U, 't' - 0x20U,
- ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U,
+ ' ' - 0x20U, 'm' - 0x20U, 'u' - 0x20U, 'l' - 0x20U,
  ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U,
  ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U,
  ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U, ' ' - 0x20U,
@@ -107,7 +107,7 @@ static const u8 xmb_comp_fidcnt[20U] PROGMEM = {
  XMB_FID_CNT_ALEX,
  XMB_FID_CNT_WOPS,
  XMB_FID_CNT_BIT,
- 0,
+ XMB_FID_CNT_MUL,
  0,
  0,
  0,
