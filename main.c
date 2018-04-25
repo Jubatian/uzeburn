@@ -56,6 +56,7 @@ static const u8 xmb_logo_data[18U * 12U] PROGMEM = {
 static const u8 text_data[] PROGMEM =
  "      XMBurner for UzeBox\n"
  "  by: Sandor Zsuga (Jubatian)\n"
+ "   Library version: ........\n"
  "\n"
  "Uzebox & comps. license : GPLv3\n"
  "XMBurner lib. license ..: MPLv2\n";
@@ -179,10 +180,26 @@ static void draw_generic_text(u8 const* sptr, u8 x, u8 y)
 
 
 
+/* Outputs a single numeric digit */
+static void draw_digit(u8 digit, u8 x, u8 y)
+{
+ vram[(u16)(y) * VRAM_TILES_H + x] = ((digit & 0xFU) + (u8)('0')) - 0x20U;
+}
+
+
+
 /* Outputs text data */
 static void draw_text(u8 x, u8 y)
 {
+ u32 ver = xmb_version();
+ u8  i;
+
  draw_generic_text(&text_data[0], x, y);
+
+ for (i = 0U; i < 8U; i++){
+  draw_digit(ver, x + 27U - i, y + 2U);
+  ver >>= 4;
+ }
 }
 
 
